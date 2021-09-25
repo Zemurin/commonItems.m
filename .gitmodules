@@ -1,0 +1,9 @@
+[submodule "commonItemsTests/commonItemsTests/googletest"]
+	path = commonItemsTests/commonItemsTests/googletest
+	url = https://github.com/google/googletest
+[submodule "commonItemsTests/googletest"]
+	path = commonItemsTests/googletest
+	url = https://github.com/google/googletest
+[submodule "ZipLib"]
+	path = ZipLib
+	url = https://github.com/ParadoxGameConverters/ZipLib
