@@ -1,0 +1,21 @@
+Release/
+ReleaseIntermediate/
+Release-Linux/
+Debug/
+DebugIntermediate/
+Analysis
+AnalysisIntermediate
+testResults
+*testResults*
+*.opensdf
+*.opendb
+*.sdf
+*.VC.db
+*.cppcheck
+.vs/
+packages/
+
+#OpenCppCoverage stuff
+*.log
+tests/.opencppcov/
+tests/log.txt
