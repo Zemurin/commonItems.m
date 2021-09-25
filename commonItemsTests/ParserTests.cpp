@@ -1,21 +1,18 @@
-#include "../CommonRegexes.h"
-#include "../Parser.h"
-#include "../ParserHelpers.h"
 #include "gtest/gtest.h"
-#include <sstream>
-
 
 
 TEST(Parser_Tests, AbsorbBOMAbsorbsBOM)
 {
 	std::stringstream input{"\xEF\xBB\xBFMore text"};
-	commonItems::absorbBOM(input);
+	//commonItems::absorbBOM(input);
 
 	char buffer[256];
 	input.getline(buffer, sizeof buffer);
 	ASSERT_EQ("More text", std::string{buffer});
 }
 
+
+/*
 TEST(Parser_Tests, AbsorbBOMDoesNotAbsorbNonBOM)
 {
 	std::stringstream input{"More text"};
@@ -358,3 +355,4 @@ TEST(Parser_Tests, CatchAllCatchesQuotedKeysWithFigurativeCrapInside)
 	ASSERT_EQ("\"this = is a silly { key\t} \"", test.key);
 	ASSERT_EQ("value", test.value);
 }
+*/

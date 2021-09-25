@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -136,6 +136,8 @@
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);googletest/googletest;googletest/googletest/include;googletest/googlemock;googletest/googlemock/include</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <OmitFramePointers>false</OmitFramePointers>
+      <EnableModules>true</EnableModules>
+      <CompileAs>CompileAsCppModule</CompileAs>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,26 +148,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\iconvlite.cpp" />
     <ClCompile Include="..\Log.cpp" />
-    <ClCompile Include="..\OSCommonLayer.cpp" />
-    <ClCompile Include="..\Parser.cpp" />
-    <ClCompile Include="..\ParserHelpers.cpp" />
-    <ClCompile Include="..\StringUtils.cpp" />
-    <ClCompile Include="..\WinUtils.cpp" />
     <ClCompile Include="googletest\googlemock\src\gmock-all.cc" />
     <ClCompile Include="googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="googletest\googletest\src\gtest_main.cc" />
+    <ClCompile Include="LogTests.ixx" />
     <ClCompile Include="ParserTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\CommonRegexes.h" />
-    <ClInclude Include="..\iconvlite.h" />
-    <ClInclude Include="..\Log.h" />
-    <ClInclude Include="..\OSCompatibilityLayer.h" />
-    <ClInclude Include="..\Parser.h" />
-    <ClInclude Include="..\ParserHelpers.h" />
-    <ClInclude Include="..\StringUtils.h" />
+    <ClCompile Include="..\Log.ixx">
+      <FileType>Document</FileType>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

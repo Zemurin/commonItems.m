@@ -1,14 +1,7 @@
-#ifndef LOG_H_
-#define LOG_H_
+export module Logs;
+import std.core;
 
-
-
-#include <sstream>
-#include <string>
-
-
-
-enum class LogLevel
+export enum class LogLevel
 {
 	Error,
 	Warning,
@@ -17,9 +10,7 @@ enum class LogLevel
 	Progress
 };
 
-
-
-class Log
+export class Log
 {
 	public:
 		explicit Log(LogLevel);
@@ -43,9 +34,4 @@ class Log
 		std::ostringstream logMessageStream;
 };
 
-
 using LOG = Log;
-
-
-
-#endif // LOG_H_

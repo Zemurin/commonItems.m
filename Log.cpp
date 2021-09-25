@@ -1,11 +1,6 @@
-#include "Log.h"
-#include "OSCompatibilityLayer.h"
-#include <ctime>
-#include <fstream>
-#include <iostream>
-#include <map>
-
-
+import Logs;
+import <ctime>;
+import std.core;
 
 Log::Log(const LogLevel level): logLevel(level)
 {
@@ -50,11 +45,11 @@ void Log::WriteTheTime(std::ostream& logFile)
 	time(&rawTime);
 
 	tm timeInfo{};
-	#if (defined(WIN32) || defined(_WIN32) || defined(__WIN32__))
+#if (defined(WIN32) || defined(_WIN32) || defined(__WIN32__))
 	localtime_s(&timeInfo, &rawTime);
-	#else
+#else
 	localtime_r(&rawTime, &timeInfo); // POSIX
-	#endif
+#endif
 	
 
 	char timeBuffer[64];
