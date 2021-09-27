@@ -137,7 +137,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <OmitFramePointers>false</OmitFramePointers>
       <EnableModules>true</EnableModules>
-      <CompileAs>CompileAsCppModule</CompileAs>
+      <AdditionalBMIDirectories>%(AdditionalIncludeDirectories);</AdditionalBMIDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,15 +149,27 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Log.cpp" />
-    <ClCompile Include="googletest\googlemock\src\gmock-all.cc" />
-    <ClCompile Include="googletest\googletest\src\gtest-all.cc" />
-    <ClCompile Include="googletest\googletest\src\gtest_main.cc" />
-    <ClCompile Include="LogTests.ixx" />
-    <ClCompile Include="ParserTests.cpp" />
+    <ClCompile Include="googletest\googlemock\src\gmock-all.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="googletest\googletest\src\gtest-all.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="googletest\googletest\src\gtest_main.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="LogTests.ixx">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="ParserTests.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Log.ixx">
-      <FileType>Document</FileType>
+      <FileType>CppHeader</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsCppModule</CompileAs>
     </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -27,6 +27,9 @@
     <ClCompile Include="LogTests.ixx">
       <Filter>tests</Filter>
     </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>commonItems</Filter>
+    </ClCompile>
     <ClCompile Include="..\Log.cpp">
       <Filter>commonItems</Filter>
     </ClCompile>
